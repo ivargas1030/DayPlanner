@@ -8,9 +8,20 @@
  * 
  */
 
-var hours = ["9AM", "10 AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
+$(document).ready(function() {
+
+ var hours = ["9AM", "10 AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
 var i;
 for (i = 0; i < hours.length; i++) {
-    $(".container").text(hours[i]);
+    var hoursRow = $("<row>");
+
+        
+        hoursRow.addClass("hours-row row hours-row-color");
+        hoursRow.attr("data-letter", hours[i]);
+        hoursRow.text(hours[i]);
+        $("#row").append(hoursRow);
+
 }
+});
+
