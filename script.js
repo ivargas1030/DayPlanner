@@ -46,3 +46,7 @@ for (i = 0; i < hours.length; i++) {
 
 });
 
+//display date
+var today = moment().format("MMMM Do YYYY");
+$("#currentDay").text(today);
+
