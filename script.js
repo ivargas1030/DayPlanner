@@ -16,29 +16,37 @@ var i;
 for (i = 0; i < hours.length; i++) {
     //creating the row for the hours
     var hoursRow = $("<div>");   
-    hoursRow.addClass("hours-row row hours-row-color");
+    hoursRow.addClass("row");
     hoursRow.attr("data-index", hours[i]);
 
     //column 1
     var timeColumn = $("<div>");   
-    timeColumn.addClass("col-sm");
+    timeColumn.addClass("hour col-sm-1");
     timeColumn.text(hours[i]);
     $(hoursRow).append(timeColumn);
 
     //column 2
     var textColumn = $("<div>");
-    textColumn.addClass("col-lg");
+    textColumn.addClass("col-sm-10");
     $(hoursRow).append(textColumn);
     
 
     //column 3
     var saveColumn = $("<div>");
-    saveColumn.addClass("col-sm");
+    saveColumn.addClass("col-sm-1");
     $(hoursRow).append(saveColumn);
 
+    //text input field
+
     var textArea = $("<textarea></textarea>");
-    textArea.addClass("col-lg");
-    $(textColumn).append(textArea)
+    textArea.addClass("row col-sm-10");
+    $(textColumn).append(textArea);
+
+    //adding save button
+
+    var saveBtn = $("<button>Save</button>");
+    saveBtn.addClass("saveBtn col-sm=1");
+    $(saveColumn).append(saveBtn);
 
 
     //last step
@@ -54,3 +62,6 @@ for (i = 0; i < hours.length; i++) {
 var currentDate = moment().format("MMMM Do YYYY");
 $("#currentDay").text(currentDate);
 
+
+//local storage
+localStorage.setItem("data-index");
