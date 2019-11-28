@@ -1,16 +1,8 @@
-/**
- * array of strings, "9AM etc."
- * create a for loop, for each item in the array make a row in the HTML and append to the page
- * get something to appear, add the times
- * row with three columns
- * 
- *
- * 
- */
+
 
 $(document).ready(function() {
 
- var hours = ["9AM", "10 AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
+var hours = ["9AM", "10 AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
  
 var i;
 for (i = 0; i < hours.length; i++) {
@@ -45,7 +37,7 @@ for (i = 0; i < hours.length; i++) {
     //adding save button
 
     var saveBtn = $("<button>Save</button>");
-    saveBtn.addClass("saveBtn col-sm=1");
+    saveBtn.addClass("saveBtn");
     $(saveColumn).append(saveBtn);
 
 
@@ -58,10 +50,16 @@ for (i = 0; i < hours.length; i++) {
 
 });
 
-//display date
+//trying to get the button to work - took this from a website and tried to fix it for my planner but this doesn't do anything
+
+$("saveBtn").click(function () {
+    
+ })
+
+//display date-somehow got this to work
 var currentDate = moment().format("MMMM Do YYYY");
 $("#currentDay").text(currentDate);
 
 
 //local storage
-localStorage.setItem("data-index");
+localStorage.setItem("textArea");
